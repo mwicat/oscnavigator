@@ -1,0 +1,2 @@
+recursive-include reanavigator/templates *
+recursive-include reanavigator/static *
