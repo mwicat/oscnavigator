@@ -3,23 +3,19 @@ from flask_sockets import Sockets
 
 import gevent
 
-from .player import PlayerService
+from .osc import OSCService, OSCServer
 from .routing import MessageRouter
 
 app = Flask(__name__)
 sockets = Sockets(app)
 
 router = MessageRouter()
-player_service = PlayerService(router.broadcast)
-player_service.serve()
+osc_service = OSCService(router.broadcast)
+osc_service.serve()
 
-
-@app.route('/play')
-def play():
-    song = request.args.get('song')
-    player_service.play(song)
-    return ''
-
+osc_server = OSCServer(':9000')
+osc_server.set_handler(osc_service.handle)
+osc_server.serve()
 
 @sockets.route('/notes')
 def outbox(ws):

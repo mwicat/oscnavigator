@@ -4,13 +4,14 @@ from setuptools import setup, find_packages
 
 
 setup(name='reanavigator',
-      version='0.7.1',
-      description='Web application for learning the musical scales',
+      version='0.0.1',
+      description='Web application to help navigate tracks in mixer',
       author='mwicat',
       author_email='mwicat@gmail.com',
       include_package_data=True,
       zip_safe=False,
       packages=find_packages(),
+      dependency_links=['http://github.com/mwicat/python2-osc/tarball/python2#egg=python2-osc'],
       install_requires=['argh',
                         'Flask',
                         'flask-Cache',
@@ -19,11 +20,6 @@ setup(name='reanavigator',
                         'gunicorn',
                         'gevent',
                         'gevent-websocket',
-                        'music21',
-                        'progressbar2',
-                        'redis',
-                        'sqlalchemy'],
-      entry_points={'console_scripts':
-                    ['reanavigatord = reanavigator.scripts.reanavigatord:main']
-                    }
+                        'python2-osc'],
+      entry_points={}
 )
