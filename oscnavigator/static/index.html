@@ -7,22 +7,17 @@
 <script src="/static/oscnavigator.js"></script>
 
 <script>
-    var inbox = new WebSocket("ws://" + location.host + "/notes");
+    var inbox = new WebSocket("ws://" + location.host + "/events");
 
     inbox.onmessage = function(message) {
         $("#result").html($("#result").html() + message.data + "<br/>");
     };
 
-    function play() {
-        $.get("/play", {song: "mojsong"});
-    }
 </script>
 
 <body>
 
-<div id="musictable"></div>
-
-<button onclick="play()">play</button>
 <div id="result"></div>
+<div id="musictable"></div>
 
 </body>

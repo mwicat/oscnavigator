@@ -17,7 +17,7 @@ osc_server = OSCServer(':9000')
 osc_server.set_handler(osc_service.handle)
 osc_server.serve()
 
-@sockets.route('/notes')
+@sockets.route('/events')
 def outbox(ws):
     router.register(ws)
     while not ws.closed:

@@ -6,6 +6,8 @@ import time
 
 from pythonosc import osc_packet, dispatcher
 
+import json
+
 from .services import RemoteService
 
 
@@ -51,4 +53,7 @@ class OSCService(RemoteService):
         self.cb = cb
 
     def handle(self, command, *args):
+        event = {'command': command,
+                 'args': args}
         print 'got command', command, args
+        self.cb(json.dumps(event))
