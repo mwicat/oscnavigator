@@ -1,11 +1,11 @@
-reanavigator
+oscnavigator
 =======
 
-ReaNavigator is a web application to help navigate tracks in mixer.
+oscnavigator is a web application to help navigate tracks in mixer.
 
 Installation
 ------------
 
 To install using `pip`::
 
-	pip install -e https://github.com/mwicat/reanavigator.git
+	pip install -e https://github.com/mwicat/oscnavigator.git

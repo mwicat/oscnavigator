@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 
-setup(name='reanavigator',
+setup(name='oscnavigator',
       version='0.0.1',
       description='Web application to help navigate tracks in mixer',
       author='mwicat',

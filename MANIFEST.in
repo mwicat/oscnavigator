@@ -1,2 +1,2 @@
-recursive-include reanavigator/templates *
-recursive-include reanavigator/static *
+recursive-include oscnavigator/templates *
+recursive-include oscnavigator/static *
