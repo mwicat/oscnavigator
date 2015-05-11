@@ -21,5 +21,7 @@ setup(name='oscnavigator',
                         'gevent',
                         'gevent-websocket',
                         'python2-osc'],
-      entry_points={}
+      entry_points={'console_scripts':
+                    ['oscnavcli = oscnavigator.scripts.oscnavcli:main']
+                    }
 )
